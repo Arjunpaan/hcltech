@@ -1,0 +1,13 @@
+# Backend + test engine dependencies (Python 3.11+)
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+httpx>=0.27
+python-dotenv>=1.0
+pyyaml>=6.0
+# Tools the TEST ENGINE runs on generated code
+pytest>=8.0
+ruff>=0.4
+bandit>=1.7
+# Optional dependency scan (only if run_pip_audit: true in gates.yaml)
+# pip-audit>=2.7

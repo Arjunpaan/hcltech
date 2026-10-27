@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+backend/data/
+generated_projects/run_*/
+frontend/node_modules/
+frontend/dist/
+.reports/
+.pytest_cache/
+.ruff_cache/

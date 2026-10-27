@@ -1,0 +1,14 @@
+# Quality-gate rules. Change any value and the next check / release decision uses it.
+# You can also edit these from the dashboard ("Gate settings" screen).
+
+max_fix_rounds: 2              # how many times the Fix Agent may try automatically
+require_fix_approval: true     # a human must approve every AI code change
+min_test_pass_rate: 1.0        # 1.0 = all tests must pass; 0.8 = 80% is enough
+block_severity: high           # security findings at or above this level block release
+reviewer_block_severity: high  # code-review findings at or above this level block release
+conditional_min_severity: medium  # open findings at or above this make the result CONDITIONAL
+max_ruff_issues: 0             # code-quality issues allowed
+ruff_blocking: false           # true = too many quality issues block release
+require_ac_test_mapping: true  # every acceptance criterion must have a test
+run_pip_audit: false           # dependency vulnerability scan (needs internet + pip-audit)
+check_timeout_seconds: 60      # any single check is stopped after this many seconds

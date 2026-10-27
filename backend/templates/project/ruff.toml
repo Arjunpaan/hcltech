@@ -1,0 +1,6 @@
+# Fixed Ruff rules so results are the same on every laptop.
+target-version = "py311"
+line-length = 120
+
+[lint]
+select = ["E4", "E7", "E9", "F"]   # Ruff's standard set: real errors and pyflakes bugs

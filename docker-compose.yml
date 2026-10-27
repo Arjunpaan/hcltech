@@ -1,0 +1,19 @@
+# One command to start everything:  docker compose up --build
+# Dashboard: http://localhost:5173   API: http://localhost:8000/docs
+services:
+  backend:
+    build: ./backend
+    ports: ["8000:8000"]
+    env_file: [.env]
+    volumes:
+      - ./generated_projects:/srv/generated_projects
+      - sdlc-data:/srv/data
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:8000
+    ports: ["5173:5173"]
+    depends_on: [backend]
+volumes:
+  sdlc-data:
